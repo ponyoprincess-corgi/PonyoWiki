@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ponyo Wiki</title>
+  <link rel="stylesheet" href="style.css?v=20260624-designer-domains">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">PW</div>
+        <div>
+          <h1>Ponyo Wiki</h1>
+          <p id="sourceSummary">Loading cached data</p>
+        </div>
+      </div>
+
+      <nav id="categoryNav" class="category-nav" aria-label="Data categories"></nav>
+
+      <section class="sidebar-section">
+        <h2>Lenses</h2>
+        <button class="lens-button active" data-lens="overview" type="button">Overview</button>
+        <button class="lens-button" data-lens="attention" type="button">Needs Attention</button>
+        <button class="lens-button" data-lens="unused" type="button">Unused Content</button>
+        <button class="lens-button" data-lens="relationships" type="button">Relationship Map</button>
+        <button class="lens-button" data-lens="edits" type="button">Edit Session</button>
+      </section>
+    </aside>
+
+    <main class="workspace">
+      <header class="topbar">
+        <div class="query-box">
+          <label for="globalSearch">Ask or search</label>
+          <input id="globalSearch" type="search" autocomplete="off" placeholder="Find Fiber, show items used by Tailor Station, or audit unused resources...">
+        </div>
+        <div class="sync-panel">
+          <input id="bridgeUrl" type="url" value="http://127.0.0.1:8767" aria-label="Bridge URL">
+          <button id="syncButton" class="primary-button" type="button">Sync From Unreal</button>
+          <button id="exportButton" class="secondary-button" type="button">Export Session</button>
+        </div>
+      </header>
+
+      <section class="status-row">
+        <div id="statusStrip" class="status-strip status-warn">Loading last real export.</div>
+        <div id="quickStats" class="quick-stats"></div>
+      </section>
+
+      <section class="workbench">
+        <section class="library-panel">
+          <div class="panel-header">
+            <div>
+              <h2 id="viewTitle">Dashboard</h2>
+              <p id="viewSubtitle">Designer-readable balance workspace.</p>
+            </div>
+            <div id="recordCount" class="count-pill">0</div>
+          </div>
+
+          <div class="filter-grid">
+            <label class="filter-field">
+              <span id="categoryFilterLabel">Group</span>
+              <select id="categoryFilter" aria-label="Group"></select>
+            </label>
+            <label class="filter-field">
+              <span id="typeFilterLabel">Data type</span>
+              <select id="typeFilter" aria-label="Data type"></select>
+            </label>
+            <label class="filter-field">
+              <span id="stationFilterLabel">Station / list</span>
+              <select id="stationFilter" aria-label="Station or list"></select>
+            </label>
+            <label class="toggle"><input id="warningFilter" type="checkbox"> Data gaps</label>
+          </div>
+
+          <div id="dashboard" class="dashboard-grid"></div>
+          <div id="recordsList" class="records-list"></div>
+        </section>
+
+        <div id="paneResizer" class="pane-resizer" role="separator" aria-label="Resize item list and inspector" aria-orientation="vertical" tabindex="0"></div>
+
+        <aside class="detail-panel">
+          <div id="detailHeader" class="detail-header"></div>
+          <div id="detailBody" class="detail-body"></div>
+        </aside>
+      </section>
+
+      <section class="drawer">
+        <div class="drawer-tabs">
+          <button class="tab-button active" data-tab="impact" type="button">Impact</button>
+          <button class="tab-button" data-tab="validation" type="button">Validation</button>
+          <button class="tab-button" data-tab="changes" type="button">Changes</button>
+          <button class="tab-button" data-tab="source" type="button">Source</button>
+        </div>
+        <div id="drawerBody" class="drawer-body"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js?v=20260624-designer-domains"></script>
+</body>
+</html>
